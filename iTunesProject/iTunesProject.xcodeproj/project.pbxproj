@@ -28,7 +28,6 @@
 		FD9CCAC52A3B147200CB53FE /* MockTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CCAC42A3B147200CB53FE /* MockTrackCell.swift */; };
 		FD9CCACA2A3B168D00CB53FE /* Track.json in Resources */ = {isa = PBXBuildFile; fileRef = FD9CCAC92A3B168D00CB53FE /* Track.json */; };
 		FDA371502A33108A00E2CD10 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3714F2A33108A00E2CD10 /* AVFoundation.framework */; };
-		FDA371522A33AEE300E2CD10 /* TrackCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA371512A33AEE300E2CD10 /* TrackCellInteractor.swift */; };
 		FDC104402A31E82900788E7B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1043E2A31E82900788E7B /* TrackCell.swift */; };
 		FDC104412A31E82900788E7B /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC1043F2A31E82900788E7B /* TrackCell.xib */; };
 		FDC104432A31E85100788E7B /* TrackCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC104422A31E85100788E7B /* TrackCellPresenter.swift */; };
@@ -99,7 +98,6 @@
 		FD9CCAC42A3B147200CB53FE /* MockTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackCell.swift; sourceTree = "<group>"; };
 		FD9CCAC92A3B168D00CB53FE /* Track.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Track.json; sourceTree = "<group>"; };
 		FDA3714F2A33108A00E2CD10 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		FDA371512A33AEE300E2CD10 /* TrackCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellInteractor.swift; sourceTree = "<group>"; };
 		FDC1043E2A31E82900788E7B /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		FDC1043F2A31E82900788E7B /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		FDC104422A31E85100788E7B /* TrackCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellPresenter.swift; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 				FDC1043E2A31E82900788E7B /* TrackCell.swift */,
 				FDC1043F2A31E82900788E7B /* TrackCell.xib */,
 				FDC104422A31E85100788E7B /* TrackCellPresenter.swift */,
-				FDA371512A33AEE300E2CD10 /* TrackCellInteractor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,7 +505,6 @@
 				FDDD4E4A2A31142E0011C452 /* SplashViewController.swift in Sources */,
 				FD108A072A2FBCDB00CE6DE4 /* AppDelegate.swift in Sources */,
 				FDDD4E572A31151E0011C452 /* DetailInteractor.swift in Sources */,
-				FDA371522A33AEE300E2CD10 /* TrackCellInteractor.swift in Sources */,
 				FDDD4E4F2A31145E0011C452 /* SplashInteractor.swift in Sources */,
 				FDDD4E512A31146E0011C452 /* SplashRouter.swift in Sources */,
 				FDC104432A31E85100788E7B /* TrackCellPresenter.swift in Sources */,
