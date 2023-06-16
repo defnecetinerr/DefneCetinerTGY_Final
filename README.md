@@ -48,4 +48,10 @@
 ![7](https://github.com/defnecetinerr/DefneCetinerTGY_Final/assets/96814278/351c2438-c868-428d-b9fa-3dcb6bfa5e9f)
 ![8](https://github.com/defnecetinerr/DefneCetinerTGY_Final/assets/96814278/8aa163d3-1dc0-45d4-9f26-0a48eb0c94f4)
 
+----------------------------------------------------------------------------------
+## Recording
+
+https://github.com/defnecetinerr/DefneCetinerTGY_Final/assets/96814278/db174d2a-cc9b-4936-a48d-3d142a192f39
+
+
 
