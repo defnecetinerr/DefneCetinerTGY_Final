@@ -24,8 +24,7 @@ final class SplashViewController: BaseViewController {
       //  super.viewDidAppear(animated)
         presenter.viewDidAppear()
     }
-
-    
+   
 }
 
 extension SplashViewController: SplashViewControllerProtocol {

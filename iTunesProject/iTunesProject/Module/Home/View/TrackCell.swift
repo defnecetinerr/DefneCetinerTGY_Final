@@ -31,7 +31,6 @@ final class TrackCell: UITableViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -43,8 +42,8 @@ final class TrackCell: UITableViewCell {
     }
     
     @objc internal func playButtonTapped() {
-           cellPresenter.playButtonTapped()
-       }
+        cellPresenter.playButtonTapped()
+    }
 }
 
 extension TrackCell: TrackCellProtocol {
@@ -52,7 +51,6 @@ extension TrackCell: TrackCellProtocol {
     func stopPlayback() {
         cellPresenter?.stopPlayback()
     }
-    
     
     func setImage(_ image: UIImage) {
         DispatchQueue.main.async {
@@ -73,8 +71,8 @@ extension TrackCell: TrackCellProtocol {
     }
     
     func updatePlayButtonImage(isPlaying: Bool) {
-           let buttonImage = isPlaying ? UIImage(systemName: "pause.circle") : UIImage(systemName: "play.circle")
-           playButton.setImage(buttonImage, for: .normal)
-       }
+        let buttonImage = isPlaying ? UIImage(systemName: "pause.circle") : UIImage(systemName: "play.circle")
+        playButton.setImage(buttonImage, for: .normal)
+    }
     
 }

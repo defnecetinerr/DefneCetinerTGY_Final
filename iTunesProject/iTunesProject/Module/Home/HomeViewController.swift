@@ -17,7 +17,7 @@ protocol HomeViewControllerProtocol: AnyObject {
 }
 
 final class HomeViewController: BaseViewController {
-
+    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -29,15 +29,15 @@ final class HomeViewController: BaseViewController {
     private var player: AVPlayer?
     private var currentPlayingIndexPath: IndexPath?
     private var currentPlayingCell: TrackCell?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         searchBar.delegate = self
         presenter.viewDidLoad()
         setAccessibilityIdentifiers()
         keyboardHidden()
-     
+        
     }
     private func keyboardHidden() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -45,11 +45,11 @@ final class HomeViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
     }
     @objc private func dismissKeyboard() {
-            view.endEditing(true)
-        }
+        view.endEditing(true)
+    }
 }
 extension HomeViewController: HomeViewControllerProtocol {
- 
+    
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -72,7 +72,7 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func hideLoadingView() {
-       hideLoading()
+        hideLoading()
     }
 }
 
@@ -86,9 +86,8 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(with: TrackCell.self, for: indexPath)
         if let track = presenter.track(indexPath.row) {
             cell.cellPresenter = TrackCellPresenter(view: cell, track: track, imageFetcher: ImageFetcher())
-           
+            
         }
-        
         return cell
     }
 }
@@ -105,8 +104,6 @@ extension HomeViewController: UITableViewDelegate {
             }
         }
     }
-
-
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -116,8 +113,8 @@ extension HomeViewController: UITableViewDelegate {
         return 130
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            dismissKeyboard()
-        }
+        dismissKeyboard()
+    }
 }
 
 extension HomeViewController: UISearchBarDelegate {

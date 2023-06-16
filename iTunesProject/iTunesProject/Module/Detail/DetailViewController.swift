@@ -21,9 +21,7 @@ protocol DetailViewControllerProtocol: AnyObject {
     func showConfirmationAlert()
 }
 
-
 final class DetailViewController: BaseViewController {
-
     @IBOutlet private weak var trackImage: UIImageView!
     @IBOutlet private weak var trackName: UILabel!
     @IBOutlet private weak var artistName: UILabel!
@@ -34,10 +32,8 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private weak var playMusicButton: UIButton!
     @IBOutlet private weak var likeButton: UIButton!
 
-    
     var presenter: DetailPresenterProtocol!
-    
-    
+
     private var audioPlayer: AVAudioPlayer?
        private var isPlaying: Bool = false {
            didSet {
@@ -48,7 +44,6 @@ final class DetailViewController: BaseViewController {
                }
            }
        }
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +61,6 @@ final class DetailViewController: BaseViewController {
     @IBAction private func likeTapped(_ sender: Any) {
         presenter.likeTapped()
     }
-    
 }
 
 extension DetailViewController: DetailViewControllerProtocol {
@@ -89,8 +83,6 @@ extension DetailViewController: DetailViewControllerProtocol {
         let removeAction = UIAlertAction(title: "Kaldır", style: .destructive) { [weak self] (_) in
             self?.presenter.removeFromFavoritesTapped()
             self?.setFavoriteState(false)
-            
-          
         }
         
         alertController.addAction(cancelAction)
@@ -99,7 +91,6 @@ extension DetailViewController: DetailViewControllerProtocol {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    
   func setFavoriteState(_ isFavorite: Bool) {
       let imageName = isFavorite ? "heart.fill" : "heart"
       DispatchQueue.main.async {
@@ -112,7 +103,6 @@ extension DetailViewController: DetailViewControllerProtocol {
             self.playMusicButton.setImage(image, for: .normal)
         }
     }
-    
     
     func setTrackImage(_ image: UIImage) {
         DispatchQueue.main.async {
@@ -145,10 +135,7 @@ extension DetailViewController: DetailViewControllerProtocol {
     func setprimaryGenreName(_ text: String) {
         self.trackGenreName.text = text
     }
-    
-
-
-    
+   
 }
 extension DetailViewController {
     func setAccessibilityIdentifiers() {

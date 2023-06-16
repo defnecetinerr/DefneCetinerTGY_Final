@@ -31,7 +31,7 @@ final class HomeRouterTest: XCTestCase {
         XCTAssertTrue(router.isInvokedNavigate)
         XCTAssertEqual(router.invokedNavigateCount, 1)
         if case .detail = router.invokedNavigateParameters?.route {
-        
+            
         } else {
             XCTFail("Route is not detail")
         }

@@ -15,22 +15,19 @@ protocol HomePresenterProtocol: AnyObject {
     func didSelectRowAt(index: Int)
     func searchTrack(with keyword: String)
     func clearSearchResult()
-    
 }
 
 final class HomePresenter {
-    
     unowned var view: HomeViewControllerProtocol?
     let router: HomeRouterProtocol!
     let interactor: HomeInteractorProtocol
     
-    
     private var track: [Track] = []
     
     init(
-         view: HomeViewControllerProtocol,
-         router: HomeRouterProtocol,
-         interactor: HomeInteractorProtocol
+        view: HomeViewControllerProtocol,
+        router: HomeRouterProtocol,
+        interactor: HomeInteractorProtocol
     )
     {
         self.view = view
@@ -50,10 +47,8 @@ extension HomePresenter: HomePresenterProtocol {
         view?.reloadData()
     }
     
- 
     func viewDidLoad() {
         view?.setupTableView()
-       
     }
     
     func numberOfItem() -> Int {
@@ -68,7 +63,6 @@ extension HomePresenter: HomePresenterProtocol {
         guard let source = track(index) else { return }
         router.navigate(.detail(source: source))
     }
-
 }
 
 extension HomePresenter: HomeInteractorOutputProtkol {
@@ -84,6 +78,4 @@ extension HomePresenter: HomeInteractorOutputProtkol {
             view?.showError(error.localizedDescription)
         }
     }
-    
-    
 }

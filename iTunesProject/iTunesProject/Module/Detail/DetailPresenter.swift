@@ -10,7 +10,6 @@ import AVFoundation
 import SDWebImage
 import iTunesAPI
 
-
 protocol DetailPresenterProtocol {
     func viewDidLoad()
     func playMusicTapped()
@@ -51,8 +50,7 @@ extension DetailPresenter: DetailPresenterProtocol {
         CoreDataManager.shared.removeFromFavorites(trackId: trackId)
         view.setFavoriteState(false)
     }
-    
-    
+  
     func playMusicTapped() {
         guard let track = source else { return }
         
@@ -77,22 +75,18 @@ extension DetailPresenter: DetailPresenterProtocol {
         let playerItem = AVPlayerItem(url: previewURL)
         player = AVPlayer(playerItem: playerItem)
         
-        // Set the current time if available
         if let currentTime = currentTime {
             player?.seek(to: currentTime)
         }
-        
         player?.play()
-        
         isPlaying = true
     }
-
+    
     private func pausePlayback() {
         player?.pause()
         currentTime = player?.currentTime()
         isPlaying = false
     }
-
     
     func likeTapped() {
         guard let track = source else { return }
@@ -106,8 +100,8 @@ extension DetailPresenter: DetailPresenterProtocol {
             CoreDataManager.shared.addToFavorites(track: track)
             view.setFavoriteState(true)
         }
-        
     }
+    
     func viewDidLoad() {
         guard let track = source else { return }
         guard let trackId = track.trackID else { return }
@@ -135,15 +129,11 @@ extension DetailPresenter: DetailPresenterProtocol {
                     self.view.setTrackImage(image)
                 }
         }
-        
         view?.setTrackName(track.trackName ?? "")
         view?.setTrackArtist(track.artistName ?? "")
         view?.setTrackCollection(track.collectionName ?? "")
         view?.setprimaryGenreName(track.primaryGenreName ?? "")
         view?.setTrackPrice(track.trackPrice ?? 0.0)
         view?.setCollectionPrice(track.collectionPrice ?? 0.0)
-    }
-    
-    
-    
+    }   
 }

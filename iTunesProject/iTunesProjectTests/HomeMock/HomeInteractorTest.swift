@@ -10,29 +10,29 @@ import XCTest
 import iTunesAPI
 
 final class HomeInteractorTest: XCTestCase {
-
-    var interactor: MockHomeInteractor!
-
-     override func setUp() {
-         super.setUp()
-         
-         interactor = .init()
-     }
-
-     override func tearDown() {
-         interactor = nil
-         super.tearDown()
-     }
-       func test_fetchTrack() {
-           XCTAssertFalse(interactor.isInvokedFetchTrack)
-           XCTAssertFalse((interactor.inkovedFetchTrackCount != 0))
     
-           let keyword = "music"
-           interactor.fetchTrack(with: keyword)
-           
-           XCTAssertTrue(interactor.isInvokedFetchTrack)
-           XCTAssertEqual(interactor.inkovedFetchTrackCount, 1)
-       }
+    var interactor: MockHomeInteractor!
+    
+    override func setUp() {
+        super.setUp()
+        
+        interactor = .init()
+    }
+    
+    override func tearDown() {
+        interactor = nil
+        super.tearDown()
+    }
+    func test_fetchTrack() {
+        XCTAssertFalse(interactor.isInvokedFetchTrack)
+        XCTAssertFalse((interactor.inkovedFetchTrackCount != 0))
+        
+        let keyword = "music"
+        interactor.fetchTrack(with: keyword)
+        
+        XCTAssertTrue(interactor.isInvokedFetchTrack)
+        XCTAssertEqual(interactor.inkovedFetchTrackCount, 1)
+    }
     
     func test_fetchTrack_MultipleCalls() {
         XCTAssertFalse(interactor.isInvokedFetchTrack)
@@ -49,4 +49,4 @@ final class HomeInteractorTest: XCTestCase {
         XCTAssertEqual(interactor.inkovedFetchTrackCount, numberOfCalls)
     }
     
-   }
+}

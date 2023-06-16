@@ -11,7 +11,7 @@ import iTunesAPI
 class CoreDataManager {
     static let shared = CoreDataManager()
     private init() { }
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "iTunesProject")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -21,7 +21,7 @@ class CoreDataManager {
         })
         return container
     }()
-
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -33,7 +33,7 @@ class CoreDataManager {
             }
         }
     }
-
+    
     func addToFavorites(track: Track) {
         let context = persistentContainer.viewContext
         let favoriteTrack = CDFavoriteTrack(context: context)
@@ -44,7 +44,7 @@ class CoreDataManager {
         favoriteTrack.isFavorite = true
         saveContext()
     }
-
+    
     func removeFromFavorites(trackId: Int) {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<CDFavoriteTrack>(entityName: "CDFavoriteTrack")
@@ -54,7 +54,7 @@ class CoreDataManager {
             saveContext()
         }
     }
-
+    
     func isFavorite(trackId: Int) -> Bool {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<CDFavoriteTrack>(entityName: "CDFavoriteTrack")

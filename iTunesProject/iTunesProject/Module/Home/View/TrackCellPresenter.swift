@@ -20,7 +20,6 @@ final class ImageFetcher: ImageFetcherProtocol {
                 completion(.failure(error))
                 return
             }
-            
             if let data = data {
                 completion(.success(data))
             } else {
@@ -36,7 +35,6 @@ protocol TrackCellPresenterProtocol: AnyObject {
     func load()
     func playButtonTapped()
     func stopPlayback()
-
 }
 
 final class TrackCellPresenter: TrackCellPresenterProtocol {
@@ -45,16 +43,14 @@ final class TrackCellPresenter: TrackCellPresenterProtocol {
         player?.pause()
         isPlaying = false
     }
-    
-    
+   
     weak var view: TrackCellProtocol?
     private let track: Track
     private let imageFetcher: ImageFetcherProtocol
     public var player: AVPlayer?
     private static var activePresenter: TrackCellPresenter?
     private var currentTime: CMTime?
-  
-    
+   
     internal var isPlaying: Bool = false {
         didSet {
             DispatchQueue.main.async {
@@ -70,49 +66,45 @@ final class TrackCellPresenter: TrackCellPresenterProtocol {
     }
     
     func playButtonTapped() {
-         if isPlaying {
-             pausePlayback()
-             TrackCellPresenter.activePresenter = nil
-         } else {
-             if let activePresenter = TrackCellPresenter.activePresenter {
-                 activePresenter.pausePlayback()
-             }
-             
-             startPlayback()
-             TrackCellPresenter.activePresenter = self
-         }
-     }
+        if isPlaying {
+            pausePlayback()
+            TrackCellPresenter.activePresenter = nil
+        } else {
+            if let activePresenter = TrackCellPresenter.activePresenter {
+                activePresenter.pausePlayback()
+            }
+            startPlayback()
+            TrackCellPresenter.activePresenter = self
+        }
+    }
     
     private func startPlayback() {
-           guard let previewURLString = track.previewURL,
-                 let previewURL = URL(string: previewURLString) else {
-               return
-           }
-           
-           if let player = player {
-               player.pause()
-               self.player = nil
-           }
-           
-           let playerItem = AVPlayerItem(url: previewURL)
-           player = AVPlayer(playerItem: playerItem)
-           
-           // Set the current time if available
-           if let currentTime = currentTime {
-               player?.seek(to: currentTime)
-           }
-           
-           player?.play()
-           
-           isPlaying = true
-       }
-       
-       func pausePlayback() {
-           player?.pause()
-           currentTime = player?.currentTime()
-           isPlaying = false
-       }
-   
+        guard let previewURLString = track.previewURL,
+              let previewURL = URL(string: previewURLString) else {
+            return
+        }
+        
+        if let player = player {
+            player.pause()
+            self.player = nil
+        }
+        
+        let playerItem = AVPlayerItem(url: previewURL)
+        player = AVPlayer(playerItem: playerItem)
+        
+        if let currentTime = currentTime {
+            player?.seek(to: currentTime)
+        }
+        player?.play()
+        isPlaying = true
+    }
+    
+    func pausePlayback() {
+        player?.pause()
+        currentTime = player?.currentTime()
+        isPlaying = false
+    }
+    
     func load() {
         view?.setArtist(track.artistName ?? "")
         view?.setTrackTitle(track.trackName ?? "")

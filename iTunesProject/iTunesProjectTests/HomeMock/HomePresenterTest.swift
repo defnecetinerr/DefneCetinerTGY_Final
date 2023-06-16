@@ -16,7 +16,6 @@ final class HomePresenterTest: XCTestCase {
     var interactor: MockHomeInteractor!
     var router: MockHomeRouter!
     
-    
     override func setUp() {
         super.setUp()
         
@@ -24,9 +23,7 @@ final class HomePresenterTest: XCTestCase {
         interactor = .init()
         router = .init()
         presenter = .init(view: view, router: router, interactor: interactor)
-        
     }
-    
     override func tearDown() {
         view = nil
         interactor = nil
@@ -41,7 +38,6 @@ final class HomePresenterTest: XCTestCase {
         XCTAssertNil(interactor.invokedSearcKey)
         XCTAssertEqual(interactor.inkovedFetchTrackCount, 0)
         
-       
         let keyword = "tarkan"
         interactor.fetchTrack(with: keyword)
         
@@ -69,7 +65,6 @@ final class HomePresenterTest: XCTestCase {
         XCTAssertTrue(view.isInvokedHideLoading)
         XCTAssertEqual(presenter.numberOfItem(), 0)
         XCTAssertTrue(view.isInvokedReloadData)
-       
     }
     
     func testSearchTrack_ShowsLoadingAndFetchesTrack() {
@@ -84,7 +79,6 @@ final class HomePresenterTest: XCTestCase {
         XCTAssertTrue(interactor.isInvokedFetchTrack)
         XCTAssertEqual(interactor.inkovedFetchTrackCount, 1)
     }
-  
 }
 
 extension TrackResult {

@@ -25,7 +25,6 @@
 		FD9CCABE2A3B140700CB53FE /* MockHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CCABD2A3B140700CB53FE /* MockHomeInteractor.swift */; };
 		FD9CCAC02A3B141A00CB53FE /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CCABF2A3B141A00CB53FE /* MockHomeViewController.swift */; };
 		FD9CCAC22A3B142900CB53FE /* MockHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CCAC12A3B142900CB53FE /* MockHomeRouter.swift */; };
-		FD9CCAC52A3B147200CB53FE /* MockTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CCAC42A3B147200CB53FE /* MockTrackCell.swift */; };
 		FD9CCACA2A3B168D00CB53FE /* Track.json in Resources */ = {isa = PBXBuildFile; fileRef = FD9CCAC92A3B168D00CB53FE /* Track.json */; };
 		FDA371502A33108A00E2CD10 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3714F2A33108A00E2CD10 /* AVFoundation.framework */; };
 		FDC104402A31E82900788E7B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1043E2A31E82900788E7B /* TrackCell.swift */; };
@@ -95,7 +94,6 @@
 		FD9CCABD2A3B140700CB53FE /* MockHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeInteractor.swift; sourceTree = "<group>"; };
 		FD9CCABF2A3B141A00CB53FE /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
 		FD9CCAC12A3B142900CB53FE /* MockHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeRouter.swift; sourceTree = "<group>"; };
-		FD9CCAC42A3B147200CB53FE /* MockTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackCell.swift; sourceTree = "<group>"; };
 		FD9CCAC92A3B168D00CB53FE /* Track.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Track.json; sourceTree = "<group>"; };
 		FDA3714F2A33108A00E2CD10 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FDC1043E2A31E82900788E7B /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
@@ -177,14 +175,13 @@
 		FD108A052A2FBCDB00CE6DE4 /* iTunesProject */ = {
 			isa = PBXGroup;
 			children = (
-				FDDD4E5C2A3115540011C452 /* Reachability */,
-				FD47DB1F2A30B07100E3F912 /* Extension */,
+				FD108A172A2FBCDC00CE6DE4 /* Info.plist */,
 				FD47DB1E2A30B03A00E3F912 /* App */,
 				FD47DB1B2A30AFBD00E3F912 /* CustomView */,
+				FD47DB1F2A30B07100E3F912 /* Extension */,
 				FD47DB262A30B16A00E3F912 /* Module */,
+				FDDD4E5C2A3115540011C452 /* Reachability */,
 				FD47DB182A30AF2900E3F912 /* Utility */,
-				FD108A142A2FBCDC00CE6DE4 /* LaunchScreen.storyboard */,
-				FD108A172A2FBCDC00CE6DE4 /* Info.plist */,
 			);
 			path = iTunesProject;
 			sourceTree = "<group>";
@@ -238,6 +235,7 @@
 				FD108A082A2FBCDB00CE6DE4 /* SceneDelegate.swift */,
 				FD108A122A2FBCDC00CE6DE4 /* Assets.xcassets */,
 				FD108A0F2A2FBCDB00CE6DE4 /* iTunesProject.xcdatamodeld */,
+				FD108A142A2FBCDC00CE6DE4 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -319,17 +317,8 @@
 				FDC27ABF2A3B2E77000806FD /* HomePresenterTest.swift */,
 				FDC27AC42A3B6E83000806FD /* HomeInteractorTest.swift */,
 				FDC27AC62A3B7372000806FD /* HomeRouterTest.swift */,
-				FD9CCAC32A3B145100CB53FE /* TrackCellTest */,
 			);
 			path = HomeMock;
-			sourceTree = "<group>";
-		};
-		FD9CCAC32A3B145100CB53FE /* TrackCellTest */ = {
-			isa = PBXGroup;
-			children = (
-				FD9CCAC42A3B147200CB53FE /* MockTrackCell.swift */,
-			);
-			path = TrackCellTest;
 			sourceTree = "<group>";
 		};
 		FDC1043D2A31E7BD00788E7B /* View */ = {
@@ -529,7 +518,6 @@
 			files = (
 				FDC27AC02A3B2E77000806FD /* HomePresenterTest.swift in Sources */,
 				FDC27AC72A3B7372000806FD /* HomeRouterTest.swift in Sources */,
-				FD9CCAC52A3B147200CB53FE /* MockTrackCell.swift in Sources */,
 				FD9CCAC02A3B141A00CB53FE /* MockHomeViewController.swift in Sources */,
 				FD108A212A2FBCDC00CE6DE4 /* iTunesProjectTests.swift in Sources */,
 				FD9CCABE2A3B140700CB53FE /* MockHomeInteractor.swift in Sources */,
