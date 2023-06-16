@@ -86,7 +86,7 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(with: TrackCell.self, for: indexPath)
         if let track = presenter.track(indexPath.row) {
             cell.cellPresenter = TrackCellPresenter(view: cell, track: track, imageFetcher: ImageFetcher())
-            
+            cell.selectionStyle = .none
         }
         return cell
     }
