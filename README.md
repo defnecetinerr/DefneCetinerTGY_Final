@@ -25,6 +25,7 @@
 * Add to favorites feature is written using Core Data.
 * Network operations implemented
 * It was created in accordance with the Auto Layout Rules.
+* Unit test and UI Test are written.
 * The project was built using Viper architecture <br>
 
 ![viper](https://github.com/defnecetinerr/DefneCetinerTGY_Final/assets/96814278/2e0f1641-850a-4908-8175-2dcfb9fcd263)   <br>
